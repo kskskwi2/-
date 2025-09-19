@@ -8,7 +8,7 @@ https://www.python.org/
 ### 수동다운로드버전
 
 
-0. 릴리즈를 다운로드하고 압축를 해제합니다
+0. [릴리즈](https://github.com/kskskwi2/Hoi-Music-Mode-Auto-Generator/archive/refs/tags/tag.zip)를 다운로드하고 압축를 해제합니다
 1. 압축 해제한곳에서 cmd 또는 파워셜을 엽니다
 2. 패키지를 설치합니다
    ```pip install pytubefix pydub tkinter pillow```
@@ -17,7 +17,7 @@ https://www.python.org/
 
 ### 자동다운로드버전
 
-1. 동일하게 릴리즈를 다운로드하고 압축를 해제합니다
+1. 동일하게 [릴리즈](https://github.com/kskskwi2/Hoi-Music-Mode-Auto-Generator/archive/refs/tags/tag.zip)를 다운로드하고 압축를 해제합니다
 2. run.bat 를 실행하세요
 
 
