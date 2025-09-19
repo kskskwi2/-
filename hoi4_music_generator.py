@@ -764,10 +764,23 @@ class HOI4MusicGUI:
             with open(song_data_path, 'r', encoding='utf-8') as f:
                 mod_data = json.load(f)
 
-            self.stations = mod_data.get('stations', {})
+            loaded_stations = mod_data.get('stations', {})
+            
+            # 데이터 구조 검증 및 수정: songs 키가 리스트인지 확인
+            for station_name, station_data in loaded_stations.items():
+                if not isinstance(station_data.get("songs"), list):
+                    self.log(f"⚠️ 스테이션 '{station_name}'의 곡 목록 형식이 잘못되어 리스트로 변환합니다.")
+                    if isinstance(station_data.get("songs"), dict):
+                        # 딕셔너리 형태의 곡 목록을 리스트로 변환 (값들을 사용)
+                        station_data["songs"] = list(station_data["songs"].values())
+                    else:
+                        # 그 외의 경우, 안전하게 빈 리스트로 초기화
+                        station_data["songs"] = []
+
+            self.stations = loaded_stations
             if not self.stations:
                  raise Exception("모드 데이터에 스테이션 정보가 없습니다.")
-            
+
             first_station = list(self.stations.keys())[0]
             self.current_station_name.set(first_station)
             
