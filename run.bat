@@ -20,7 +20,6 @@ if ERRORLEVEL 1 (
 REM pip 업그레이드
 python -m pip install --upgrade pip
 
-REM 필수 패키지 설치 (tkinter 제거)
 pip install --upgrade pytubefix pydub pillow
 
 REM 스크립트 실행
@@ -29,3 +28,4 @@ python hoi4_music_generator.py
 
 echo Done!
 pause
+
